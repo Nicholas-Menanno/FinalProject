@@ -71,6 +71,8 @@ the system.
 
 ## Patching Security Vulnerabilities
 
+There were various security flaws found during the Penetration testing and below are some ways to patch and add security
+to the system.
 
 ### Vulnerability 1, Insecure SSH
 
