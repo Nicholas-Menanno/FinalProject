@@ -8,17 +8,20 @@ the command nmap -v -sV 192.168.1.110
 
 This showed the following services running (note only open ports are listed);
 
-Port Service       Version
 
-22   SSH           OpenSSH 6.7p1 Debian
+| Port 	| Service     	| Version              	|
 
-80   HTTP          Apache httpd 2.4.10
+|------	|-------------	|----------------------	|
 
-111  rpcbind       2-4
+| 22   	| SSH         	| OpenSSH 6.7p1 Debian 	|
 
-139  Netbios-ssn   Samba smbd 3.X - 4.X
+| 80   	| HTTP        	| Apache httpd 2.4.10  	|
 
-445  Netbios-ssn   Samba smbd 3.X - 4.X
+| 111  	| rcpbind     	| 2-4                  	|
+
+| 139  	| Netbios-ssn 	| Samba smbd 3.X - 4.X 	|
+
+| 445  	| Netbios-ssn 	| Samba smbd 3.X - 4.X 	|
 
 
 
@@ -28,17 +31,17 @@ MAC Address: 00:15:5D:00:04:10
 
 Service Info: Host: TARGET1; OS: Linux; cpe:/o:linux\_kernal
 
-`	`On Target 1 there was a few different ways to potentially exploit the machine based on the services running above. There are various exploit modules from msf available to use for the Samba smbd service as well as a potential exploit with rpcbind that
+On Target 1 there was a few different ways to potentially exploit the machine based on the services running above. There are various exploit modules from msf available to use for the Samba smbd service as well as a potential exploit with rpcbind that
 
 would cause a denial of service, which in this case the latter wasn't desirable.
 
-`	`After finding port 80 open I decided to investigate the IP by trying it in Firefox which led to the Raven Security website. After investigating further I discovered a blog section which was hosted on wordpress. Using a WPScan I was able to find two usernames which were steven and michael with the WPScan enumerate user option.
+After finding port 80 open I decided to investigate the IP by trying it in Firefox which led to the Raven Security website. After investigating further I discovered a blog section which was hosted on wordpress. Using a WPScan I was able to find two usernames which were steven and michael with the WPScan enumerate user option.
 
 command used: wpscan -v --enumerate vp u --url 192.168.1.110/wordpress/
 
 
 
-`	`While im not sure if this is a exploit or just a poorly configured Wordpress deployment it lead to more information about the users. Realizing port 22 was open I decided to try the usernames with some basic passwords to see if I could login. After a few
+While im not sure if this is a exploit or just a poorly configured Wordpress deployment it lead to more information about the users. Realizing port 22 was open I decided to try the usernames with some basic passwords to see if I could login. After a few
 
 attempts I found that michael:michael worked and gave me an SSH connection to Target 1. If this method didnt work I would attempt
 
@@ -106,10 +109,14 @@ Below is a table of the flags and the commands used to aquire them.
 | Flag 	| Commands used                                                              	| Flag string                      	|
 
 |------	|----------------------------------------------------------------------------	|----------------------------------	|
+
 | 1    	| (within /var/www/) grep -ri flag .                                         	| b9bbcb33e11b80be759c4e844862482d 	|
+
 | 2    	| (within /var/wwww/) grep -ri flag .                                        	| fc3fd58dcdad9ab23faca6e9a36e581c 	|
-| 3    	| (within MySQL database) use wordpress; show tables; select from wp_posts      | afc01ab56b50591e7dccf93122770cd2 	|
-| 4    	| (within /root/) cat flag4.txt	                                                | 715dea6c055b9fe3337544932f2941ce 	|
+
+| 3    	| (within MySQL database) use wordpress; show tables; select from wp_posts    | afc01ab56b50591e7dccf93122770cd2 	|
+
+| 4    	| (within /root/) cat flag4.txt	                                              | 715dea6c055b9fe3337544932f2941ce 	|
 
 (Note some flags may be 1 or 2 characters off as I had to type them out by hand)
 
