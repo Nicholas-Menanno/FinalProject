@@ -34,7 +34,7 @@ It is an apache web server which has ports open;
 
 To monitor Target 1 there was 3 basic alerts chosen which were alerts for HTTP Errors, HTTP Request size, and CPU Usage.
 
-Alert 1
+### Alert 1
 
 Excessive HTTP Errors
 Using the Packbeat indice use the rules:
@@ -44,7 +44,7 @@ WHEN count() GROUPED OVER top 5 'http.response.status\_code' IS ABOVE 400 FOR TH
 This alert monitors the amount of error codes being generated, this is useful for monitoring for any issues or problems
 that occur with the website being hosted or different types of attacks which would generate error codes as they are performed
 
-Alert 2
+### Alert 2
 
 HTTP Request Size Monitor
 Using the Packetbeat indice use the rules:
@@ -55,7 +55,7 @@ This alert monitors the amount of requests being made to the server which can sh
 or certain types of denial of service attacks like Slowloris attacks which maintain large amounts of open requests to slow down
 and eventually crash the server.
 
-Alert 3
+### Alert 3
 
 CPU Usage Monitor
 Using the Metricbeat indice use the rules:
@@ -72,7 +72,7 @@ the system.
 ## Patching Security Vulnerabilities
 
 
-Vulnerability 1, Insecure SSH
+### Vulnerability 1, Insecure SSH
 
 To strengthen the security of the SSH service I would recommend a simple program called Fail2Ban. This service ban's IP's after
 a certain amount of failed requests are made. Below is a installation guide.
@@ -109,7 +109,7 @@ and now a basic SSH protection service is configured an running where it will ba
 A very important step with securing SSH as well would be to have a strong password policy including complex unique passwords
 that expire and are not allowed to be reused.
 
-## Vulnerability 2, rpcbind DoS
+### Vulnerability 2, rpcbind DoS
 
 rpcbind had a flaw which if exploited would cause a denial of service.
 A patch was made to prevent DoS attacks from rpcbind with the package from this link
@@ -118,13 +118,13 @@ https://launchpad.net/ubuntu/+source/rpcbind/0.2.3-0.6ubuntu0.18.04.2
 
 This is a simple install and will patch that vulnerability
 
-## Vulnerability 3, Wordpress User Enumeration
+### Vulnerability 3, Wordpress User Enumeration
 
 Wordpress user enumeration allows a malicious actor to gain usernames to attempt bruteforces on passwords for those users.
 To stop this install the free WP Hardening plugin, go to the security fixers tab and enable Stop User enumeration
 There are various other settings that could be used here to add extra security to the wordpress installation
 
-## Vulnerability 4, wp-config.php is easily accessable
+### Vulnerability 4, wp-config.php is easily accessable
 
 The wp-config.php file is an important file which holds the details about the deployment of wordpress and its configuration.
 It is a good idea to change the permissions to read this file to only certain accounts based on the needs
@@ -134,7 +134,7 @@ This can be done by creating a group on linux and adding users to it who need to
 or other important wordpress files and remove and other accounts from being able to read write or execute any files
 in that directory.
 
-## Extra Security: Firewall
+### Extra Security: Firewall
 
 As an additional step it would be a good idea to utilize a firewall to have an extra layer of protection for the
 system. This can be done with the utility ufw. This can be configured in many different ways but as a general
