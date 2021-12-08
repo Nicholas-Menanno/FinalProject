@@ -20,13 +20,14 @@ Insert Image here
 For the purpose of the report we will only be covering Target 1.
 Target 1 has an IP address of 192.168.1.110
 It is an apache web server which has ports open;
-Port Service
 
-22   SSH
-80   HTTP
-111  rpcbind
-139  Netbios-ssn
-445  Netbios-ssn
+| Port 	| Service     	|
+|------	|-------------	|
+| 22   	| SSH         	|
+| 80   	| HTTP        	|
+| 111  	| rpcbind     	|
+| 139  	| Netbios-ssn 	|
+| 445  	| Netbios-ssn 	|
 
 
 ## Monitoring Targets
