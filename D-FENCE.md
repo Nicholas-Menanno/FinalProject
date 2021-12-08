@@ -71,15 +71,14 @@ the system.
 ## Patching Security Vulnerabilities
 
 
-
 Vulnerability 1, Insecure SSH
 
-Fail2ban patch
+To strengthen the security of the SSH service I would recommend a simple program called Fail2Ban. This service ban's IP's after
+a certain amount of failed requests are made. Below is a installation guide.
 
-Install fail2ban
+Installing fail2ban
 
 sudo apt-get update
-
 sudo apt-get install fail2ban
 
 to ensure it starts on system startup
@@ -93,29 +92,25 @@ sudo nano /etc/fail2ban/jail.conf
 Within the file configure it to the following settings
 
 [sshd]
-
 enabled = true
-
 port = ssh
-
 filter = sshd
-
 logpath = /var/log/auth.log
-
 maxretry = 3
-
 findtime = 300
-
 bantime = 3600
 
 now close the file and save it then run
 
 sudo systemctl restart fail2ban.service
 
-and now a basic SSH protection service is configured an running where it will ban IP's from bruteforcing SSH passwords
+and now a basic SSH protection service is configured an running where it will ban IP's from bruteforcing SSH passwords.
+A very important step with securing SSH as well would be to have a strong password policy including complex unique passwords
+that expire and are not allowed to be reused.
 
 ## Vulnerability 2, rpcbind DoS
 
+rpcbind had a flaw which if exploited would cause a denial of service.
 A patch was made to prevent DoS attacks from rpcbind with the package from this link
 
 https://launchpad.net/ubuntu/+source/rpcbind/0.2.3-0.6ubuntu0.18.04.2
@@ -124,15 +119,14 @@ This is a simple install and will patch that vulnerability
 
 ## Vulnerability 3, Wordpress User Enumeration
 
+Wordpress user enumeration allows a malicious actor to gain usernames to attempt bruteforces on passwords for those users.
 To stop this install the free WP Hardening plugin, go to the security fixers tab and enable Stop User enumeration
-
 There are various other settings that could be used here to add extra security to the wordpress installation
 
 ## Vulnerability 4, wp-config.php is easily accessable
 
-wp-config.php
-
-I would also recommened to change the permissions to read this file to only certain accounts based on the needs
+The wp-config.php file is an important file which holds the details about the deployment of wordpress and its configuration.
+It is a good idea to change the permissions to read this file to only certain accounts based on the needs
 of the developers, which should be heavily restricted as it is not important for most accounts to have access to
 and only serves as a liability if it can be accessed easily.
 This can be done by creating a group on linux and adding users to it who need to access the wp-config.php file
@@ -146,78 +140,4 @@ system. This can be done with the utility ufw. This can be configured in many di
 guideline it would be good to only allow traffic from the open ports and for SSH to deny all traffic unless
 a whitelisted IP attempts to access it. There is also an option for enabling logs which can be then
 paired with Kibana to monitor the firewall.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
