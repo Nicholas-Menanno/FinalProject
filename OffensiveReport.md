@@ -2,8 +2,7 @@
 
 ## Exposed Services
 
-The Nmap scan results show the following results usingthe command:
-nmap -v -sV 192.168.1.110
+The Nmap scan results show the following results using the command: nmap -v -sV 192.168.1.110
 
 This showed the following services running (note only open ports are listed);
 
