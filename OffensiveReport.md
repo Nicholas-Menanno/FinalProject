@@ -10,19 +10,17 @@ This showed the following services running (note only open ports are listed);
 
 
 | Port 	| Service     	| Version              	|
-
 |------	|-------------	|----------------------	|
-
 | 22   	| SSH         	| OpenSSH 6.7p1 Debian 	|
-
 | 80   	| HTTP        	| Apache httpd 2.4.10  	|
-
 | 111  	| rcpbind     	| 2-4                  	|
-
 | 139  	| Netbios-ssn 	| Samba smbd 3.X - 4.X 	|
-
 | 445  	| Netbios-ssn 	| Samba smbd 3.X - 4.X 	|
 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 
 As well as the OS details;
