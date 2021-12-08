@@ -36,12 +36,15 @@ command used: ssh michael@192.168.1.110
 ## CVE Details
 
 CVE-2017-7494 Samba since version 3.5.0 and before 4.6.4, 4.5.10 and 4.4.14 is vulnerable to remote code execution vulnerability, allowing a malicious client to upload a shared library to a writable share, and then cause the server to load and execute it.
+
 Base Score:  9.8 CRITICAL
 
 CVE-2017-8779 rpcbind through 0.2.4, LIBTIRPC through 1.0.1 and 1.0.2-rc through 1.0.2-rc3, and NTIRPC through 1.4.3 do not consider the maximum RPC data size during memory allocation for XDR strings, which allows remote attackers to cause a denial of service (memory consumption with no subsequent free) via a crafted UDP packet to port 111, aka rpcbomb.
+
 Base Score:  7.5 HIGH
 
 CVE-2017-5487 wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php in the REST API implementation in WordPress 4.7 before 4.7.1 does not properly restrict listings of post authors, which allows remote attackers to obtain sensitive information via a wp-json/wp/v2/users request.
+
 Base Score:  5.3 MEDIUM
 
 ## Exploitation
