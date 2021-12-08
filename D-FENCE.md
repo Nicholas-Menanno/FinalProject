@@ -3,6 +3,7 @@
 ## Network Topology
 
 Insert Image here
+https://github.com/Nicholas-Menanno/FinalProject/blob/5fcbc8a7ecf5a745beb8f2aef70e5c3c2f6c338a/BetterTopology.png
 
 ## Descriptions of VM's
 
