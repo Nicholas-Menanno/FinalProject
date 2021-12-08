@@ -74,6 +74,8 @@ command used: john password.txt
 I then switched users from michael to steven and found that steven had sudo privaleges to execute python commands. With this I used the python command: 
 sudo python -c ‘import pty;pty.spawn(“/bin/bash”);’
 
+![alt text](https://github.com/Nicholas-Menanno/FinalProject/blob/c6fdd1a280fb4b6e20d26e7627521bb4edb3b8de/PythonExploit.png)
+
 This command spawns a shell with root privaleges which was used to find the last two flags. One of which was flag4.txt which is found in /root/ and the other was actually in the wordpress MySQL database in the wp_posts section. This was in a slight reverse order and if you managed to find flag 3 first you would find flag 4 with it as well with the same command.
 
 Within this whole explotation section the only real exploit used was the python command to spawn a shell. Besides that everything was found by just investigating a very poorly secured machine. This could have be done in a different way but the way described above relied on the least amount of exploits and just leveraged the poor security configuration of the system to gain root access.
