@@ -16,7 +16,9 @@ This showed the following services running (note only open ports are listed);
 | 445  	| Netbios-ssn 	| Samba smbd 3.X - 4.X 	|
 
 As well as the OS details;
+
 MAC Address: 00:15:5D:00:04:10
+
 Service Info: Host: TARGET1; OS: Linux; cpe:/o:linux\_kernal
 
 On Target 1 there was a few different ways to potentially exploit the machine based on the services running above. There are various exploit modules from msf available to use for the Samba smbd service as well as a potential exploit with rpcbind that would cause a denial of service, which in this case the latter wasn't desirable.
