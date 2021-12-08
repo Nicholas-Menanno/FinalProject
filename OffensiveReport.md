@@ -33,6 +33,8 @@ While im not sure if this is a exploit or just a poorly configured Wordpress dep
 
 command used: ssh michael@192.168.1.110
 
+![alt text](https://github.com/Nicholas-Menanno/FinalProject/blob/3f18c2963649887ea427fd7a5dc7c10fba7dd176/SSHGoodToGo.png)
+
 ## CVE Details
 
 CVE-2017-7494 Samba since version 3.5.0 and before 4.6.4, 4.5.10 and 4.4.14 is vulnerable to remote code execution vulnerability, allowing a malicious client to upload a shared library to a writable share, and then cause the server to load and execute it.
