@@ -63,6 +63,8 @@ commands used: grep -ri flag .
 With this login information I logged into the MySQL database as root and within it found the hashed passwords of the users
 steven and michael.
 
+![alt text](https://github.com/Nicholas-Menanno/FinalProject/blob/adc8186d3ca93b79d2959f14645f96436d7ad20d/PassWordHashTable.png)
+
 command used: mysql --user=root --password=R@v3nSecurity --host=192.168.1.110
 
 As I was already using michaels account I decided to target the password for steven's account using john, by creating a text file with the password hash for steven in it called password.txt and found after successfully cracking the password the login info is steven:pink84
