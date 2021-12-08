@@ -17,12 +17,6 @@ This showed the following services running (note only open ports are listed);
 | 139  	| Netbios-ssn 	| Samba smbd 3.X - 4.X 	|
 | 445  	| Netbios-ssn 	| Samba smbd 3.X - 4.X 	|
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
-
 As well as the OS details;
 
 MAC Address: 00:15:5D:00:04:10
@@ -105,15 +99,10 @@ was found by just investigating a very poorly secured machine. This could have b
 Below is a table of the flags and the commands used to aquire them.
 
 | Flag 	| Commands used                                                              	| Flag string                      	|
-
-|------	|----------------------------------------------------------------------------	|----------------------------------	|
-
+|------	|-----------------------------------------------------------------------------|----------------------------------	|
 | 1    	| (within /var/www/) grep -ri flag .                                         	| b9bbcb33e11b80be759c4e844862482d 	|
-
 | 2    	| (within /var/wwww/) grep -ri flag .                                        	| fc3fd58dcdad9ab23faca6e9a36e581c 	|
-
 | 3    	| (within MySQL database) use wordpress; show tables; select from wp_posts    | afc01ab56b50591e7dccf93122770cd2 	|
-
 | 4    	| (within /root/) cat flag4.txt	                                              | 715dea6c055b9fe3337544932f2941ce 	|
 
 (Note some flags may be 1 or 2 characters off as I had to type them out by hand)
